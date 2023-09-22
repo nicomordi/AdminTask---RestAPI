@@ -13,9 +13,6 @@ router.get('/:id', function(req, res) {
 router.post('/', function(req, res) {
   tareaController.create(req, res)
 })
-router.put('/:id', function(req, res) {
-  tareaController.update(req, res)
-})
 router.delete('/:id', function(req, res) {
   tareaController.remove(req, res)
 })
