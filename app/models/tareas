@@ -1,0 +1,22 @@
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
+
+var tareaSchema = new Schema({
+  id: String,
+  nombre: String, 
+  descripción: String, 
+  fechaCreacion: String,
+  completada: String,
+   
+})
+
+var Cerveza = mongoose.model('Tarea', tareaSchema)
+
+module.exports = Tarea
+
+var nuevaTarea = new Tarea({ id:'001',nombre: 'Proyecto 1',descripción: 'tarea sencilla',fechaCreacion:'10/05/1990',completada:'NO'});
+nuevaTarea.save(function (err, nuevaTarea) {
+  if (err) return console.error(err);
+  console.log('Guardada en bbdd' +  nuevaTarea.id);
+
+})
